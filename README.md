@@ -1,2 +1,3 @@
 # LinuxConf
-各种配置
+- tmux
+- vim
