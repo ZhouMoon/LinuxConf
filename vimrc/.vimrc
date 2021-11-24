@@ -50,6 +50,7 @@ set wrapscan
 "set nowrapscan
 " 鼠标
 set mouse=a
+set mouse=v 
 " 设置256色,默认8色
 set t_Co=256
 
