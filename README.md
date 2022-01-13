@@ -1,3 +1,4 @@
 # LinuxConf
 - tmux
 - vim
+- IDEA
