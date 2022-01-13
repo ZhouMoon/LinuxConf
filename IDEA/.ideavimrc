@@ -1,0 +1,56 @@
+"配置编码
+set encoding=utf-8
+" 自动缩进
+set autoindent
+" 垂直滚动时，光标距离顶部/底部的位置(单位：行)
+set scrolloff=5
+" 设置行号
+set number
+
+" 共用系统剪贴板
+":set clipboard=unnamed
+" 高亮搜索
+set hlsearch
+" 忽略大小写
+set ignorecase
+"开启模式显示
+set showmode
+" jj 变Esc
+"inoremap jj <ESC> 0
+"在普通和可视模式下使用 ctrl-c 作为 ide 快捷方式
+" sethandler <CC>  n - v: ide  i : vim
+
+" leader
+let mapleader = "\<space>"
+" copy and paste
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+" 关闭当前编辑窗口
+noremap <Leader>c  :action CloseEditor<CR>
+" 搜索Java文件
+"nnoremap <leader>c :action GotoClass<CR>
+" 打开最近项目
+nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+" Git 提交记录
+nnoremap ta :action Annotate<cr>
+
+nnoremap H gT
+nnoremap L gt
+
+" =============
+Plus settings
+" =============
+
+" ideaVim_extension
+" 开启输入法自动切换功能
+set keep-english-in-normal
+
+" EasyMotion settings
+" 快速定位
+set easymotion
+nmap ss <Plug>(easymotion-s2)
+let g:EasyMotion_override_acejump = 0
+
+" 文本对象编辑 https://www.vim.org/scripts/script.php?script_id=2699
+set argtextobj
+set NERDTree
