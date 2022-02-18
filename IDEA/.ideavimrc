@@ -34,8 +34,14 @@ nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
 " Git 提交记录
 nnoremap ta :action Annotate<cr>
 
+" 上一个Tab
 nnoremap H gT
+" 下一个Tab
 nnoremap L gt
+" 上一个Window
+nnoremap N :action PreviousWindow<CR>
+" 下一个Window
+nnoremap M :action NextWindow<CR>
 
 " =============
 Plus settings
