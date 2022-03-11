@@ -19,6 +19,8 @@ set hlsearch
 set ignorecase
 "开启模式显示
 set showmode
+" 同步IDE与VIM书签
+set ideamarks
 " jj 变Esc
 "inoremap jj <ESC> 0
 "在普通和可视模式下使用 ctrl-c 作为 ide 快捷方式
@@ -31,6 +33,13 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 " 关闭当前编辑窗口
 noremap <Leader>c  :action CloseEditor<CR>
+" 选中块
+" noremap <Leader>v vas
+noremap <Leader>v vi""
+" 最近打开文件
+noremap <Leader>e :action  RecentFiles<cr>
+" 取消搜索高量
+noremap <Leader>u :noh<CR>
 " 搜索Java文件
 "nnoremap <leader>c :action GotoClass<CR>
 " 打开最近项目
@@ -43,9 +52,9 @@ nnoremap H gT
 " 下一个Tab
 nnoremap L gt
 " 上一个Window
-nnoremap nm :action PreviousWindow<CR>
+nnoremap mn :action PreviousWindow<CR>
 " 下一个Window
-nnoremap mn :action NextWindow<CR>
+nnoremap nm :action NextWindow<CR>
 
 " =============
 Plus settings
@@ -64,3 +73,4 @@ let g:EasyMotion_override_acejump = 0
 " 文本对象编辑 https://www.vim.org/scripts/script.php?script_id=2699
 set argtextobj
 set NERDTree
+set surround
