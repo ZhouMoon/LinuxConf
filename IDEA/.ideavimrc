@@ -1,76 +1,179 @@
-"" Source your .vimrc
-"source ~/.vimrc
+﻿"____________________________________________________________
+"
+"      /\__\         /\  \         /\  \         /\__\
+"     /::|  |       /::\  \       /::\  \       /::|  |
+"    /:|:|  |      /:/\:\  \     /:/\:\  \     /:|:|  |
+"   /:/|:|__|__   /:/  \:\  \   /:/  \:\  \   /:/|:|  |__
+"  /:/ |::::\__\ /:/__/ \:\__\ /:/__/ \:\__\ /:/ |:| /\__\
+"  \/__/~~/:/  / \:\  \ /:/  / \:\  \ /:/  / \/__|:|/:/  /
+"        /:/  /   \:\  /:/  /   \:\  /:/  /      |:/:/  /
+"       /:/  /     \:\/:/  /     \:\/:/  /       |::/  /
+"      /:/  /       \::/  /       \::/  /        /:/  /
+"      \/__/         \/__/         \/__/         \/__/
+"                  ----------------------
+"                  |用此vim配置撸代码无BUG|
+"                  ----------------------
+"_____________________________________________________________
 
-" Find more examples here: https://jb.gg/share-ideavimrc
+"Source your .vimrc
+"source ~/.vimrc
+"=============================================================
+" 键位说明
+"=============================================================
+" M->cmd, A->option, C->control
+" <ESC> - escape, <BS> - backspace, <CR> - return
+" 设置leader 键位
+let mapleader = "\<space>"
+" 基础设置
+"=============================================================
+"Find more examples here: https://jb.gg/share-ideavimrc
 "配置编码
 set encoding=utf-8
-" 自动缩进
+"自动缩进
 set autoindent
-" 垂直滚动时，光标距离顶部/底部的位置(单位：行)
+"垂直滚动时，光标距离顶部/底部的位置(单位：行)
 set scrolloff=5
-" 设置行号
+"设置行号
 set number
-
-" 共用系统剪贴板
-":set clipboard=unnamed
-" 高亮搜索
+"高亮搜索
 set hlsearch
-" 忽略大小写
-set ignorecase
 "开启模式显示
 set showmode
-" 同步IDE与VIM书签
+"同步IDE与VIM书签
 set ideamarks
-" jj 变Esc
-"inoremap jj <ESC> 0
-"在普通和可视模式下使用 ctrl-c 作为 ide 快捷方式
-" sethandler <CC>  n - v: ide  i : vim
+" Sets how many lines of history VIM has to remember
+set history=500
 
-" leader
-let mapleader = "\<space>"
-" copy and paste
-noremap <Leader>y "*y
-noremap <Leader>p "*p
+"=============================================================
+" 搜索相关
+"=============================================================
+" 搜索时智能匹配大小写
+set ignorecase smartcase
+"忽略大小写
+"set ignorecase
+" 使用正统的搜索正则
+nnoremap / /\v
+vnoremap / /\v
+" 在输入部分查找模式时显示相应的匹配点。
+set incsearch
+"set nolazyredraw "Don't redraw while executing macros
+set magic "Set magic on, for regular expressions
+" 显示匹配括号
+set showmatch
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
+"取消搜索高量
+nnoremap <Leader>u :noh<CR>
+"visual 模式 下 按* 号 搜索 光标选中的内容(对已选中的内容进行查找)
+vmap * "ry/<C-R>r<CR>
+"=============================================================
+" 复制粘贴相关
+"=============================================================
+"共用系统剪贴板
+":set clipboard=unnamed
+nnoremap <Leader>y "*y
+nnoremap <Leader>p "*p
+noremap P "0p
+vnoremap Y "+y
+
+"=============================================================
+" 个人习惯
+"=============================================================
+"选中引号内
+nnoremap <Leader>v vi""
+" 选择模式选到行首
+vnoremap H ^
+" 选择模式选到行尾
+vnoremap L $
+"上一个Tab
+"nnoremap H gT
+nnoremap <silent> <Down> gT
+"下一个Tab
+"nnoremap L gt
+nnoremap <silent> <Up> gt
+"  tab , 切换 窗口
+nnoremap <Tab> <c-w>w
+"=============================================================
+" IDEA预定义方法自定义快捷键
+" 查看预定义方法命令 `:actionlist` 请取需要的命令设为组合键
+"=============================================================
+" 显示action ID
+"toggle something
+"toggle track vim action Id
+"nnoremap ti :action VimFindActionIdAction<CR>
+" 上一个方法
+nnoremap [m :<C-u>action MethodUp<CR>
+" 下一个方法
+nnoremap ]m :<C-u>action MethodDown<CR>
+" 上一个修改点
+nnoremap [c :<C-u>action VcsShowPrevChangeMarker<CR>
+" 下一个修改点
+nnoremap ]c :<C-u>action VcsShowNextChangeMarker<CR>
+" 上一个异常
+nnoremap [e :<C-u>action GotoPreviousError<CR>
+" 下一个异常
+nnoremap ]e :<C-u>action GotoNextError<CR>
 " 关闭当前编辑窗口
-noremap <Leader>c  :action CloseEditor<CR>
-" 选中块
-" noremap <Leader>v vas
-noremap <Leader>v vi""
-" 最近打开文件
-noremap <Leader>e :action  RecentFiles<cr>
-" 取消搜索高量
-noremap <Leader>u :noh<CR>
-" 搜索Java文件
-"nnoremap <leader>c :action GotoClass<CR>
-" 打开最近项目
+nnoremap <Leader>c  :action CloseEditor<CR>
+" 高量显示
+nnoremap <Leader>sh :action HighlightUsagesInFile<CR>
+"最近打开文件
+nnoremap <Leader>e :action  RecentFiles<CR>
+"最近编辑
+nnoremap <Leader><Leader>e :action  RecentLocations<CR>
+" 当前页面方法列表
+nnoremap <Leader>l :action FileStructurePopup<CR>
+" 隐藏所有窗口
+nnoremap <Leader><Leader>l :action HideAllWindows<CR>
+" 全屏
+nnoremap <Leader><Leader><Leader>l :action ToggleFullScreen <CR>
+" 新建...
+nnoremap <Leader><Leader>n :action NewElement<CR>
+" 选择模式扩大选择范围
+vnoremap <Leader>w :action EditorSelectWord<CR>
+"打开最近项目
 nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
-" Git 提交记录
-nnoremap ta :action Annotate<cr>
+"Git 提交记录
+nnoremap ta :action Annotate<CR>
+"上一个Window
+"nnoremap mn :action PreviousWindow<CR>
+nnoremap <Left> :action PreviousWindow<CR>
+"下一个Window
+"nnoremap nm :action NextWindow<CR>
+nnoremap <Right> :action NextWindow<CR>
 
-" 上一个Tab
-nnoremap H gT
-" 下一个Tab
-nnoremap L gt
-" 上一个Window
-nnoremap mn :action PreviousWindow<CR>
-" 下一个Window
-nnoremap nm :action NextWindow<CR>
-
-" =============
-Plus settings
-" =============
-
-" ideaVim_extension
-" 开启输入法自动切换功能
+"=============================================================
+" Plus settings
+"=============================================================
+"ideaVim_extension
+"开启输入法自动切换功能
 set keep-english-in-normal
-
-" EasyMotion settings
-" 快速定位
+"EasyMotion settings
+"快速定位
 set easymotion
-nmap ss <Plug>(easymotion-s2)
+"nmap ss <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s2)
 let g:EasyMotion_override_acejump = 0
-
-" 文本对象编辑 https://www.vim.org/scripts/script.php?script_id=2699
+"文本对象编辑 https://www.vim.org/scripts/script.php?script_id=2699
 set argtextobj
 set NERDTree
 set surround
+"连接命令
+"https://github.com/JetBrains/ideavim/blob/master/doc/ideajoin-examples.md
+set ideajoin
+"=============================================================
+" Plus settings
+"=============================================================
+
+"=============================================================
+" IDE 使用默认配置
+"=============================================================
+" reactivate some IDEA shortcuts
+":map <c-b> <Action>(ShowUsages)
+:map <c-s> <Action>(SaveAll)
+
+"=============================================================
+" 自动化脚本
+"=============================================================
