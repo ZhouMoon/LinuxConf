@@ -149,7 +149,7 @@ nnoremap <Right> :action NextWindow<CR>
 "=============================================================
 "ideaVim_extension
 "开启输入法自动切换功能
-set keep-english-in-normal
+"set keep-english-in-normal
 "EasyMotion settings
 "快速定位
 set easymotion
