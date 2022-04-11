@@ -1,0 +1,26 @@
+pane	139	1	0	:	1	:/root/nacos/bin	1	less	:less ../logs/start.out
+pane	139	2	0	:	1	:/root/frp/frp_0.38.0_linux_amd64	1	./frps	:./frps -c frps.ini
+pane	139	3	0	:-	1	:/root/frp/frp_0.38.0_linux_amd64	1	./frps	:./frps -c frps_8001.ini
+pane	139	4	1	:*	1	:/root	1	bash	:
+pane	分销	1	1	:*	1	:/root	1	ssh	:ssh fx-dev1
+pane	分销	2	0	:-	1	:/root	1	ssh	:ssh fx-pre
+pane	分销	3	0	:	1	:/root	1	ssh	:ssh fx-pre
+pane	分销	4	0	:	1	:/root	1	ssh	:ssh fx-test
+pane	营销	1	0	:-Z	1	:/root	1	ssh	:ssh yx-dev1
+pane	营销	1	0	:-Z	2	:/root	0	ssh	:ssh yx-dev1
+pane	营销	2	1	:*	1	:/root	1	ssh	:ssh yx-dev2
+pane	营销	3	0	:	1	:/root	1	ssh	:ssh yx-test1
+pane	营销	4	0	:	1	:/root	1	ssh	:ssh yx-test2
+window	139	1	:root	0	:	c65d,270x56,0,0,0	off
+window	139	2	:frp-home	0	:	c65f,270x56,0,0,2	off
+window	139	3	:frp-tkpda15p	0	:-	c661,270x56,0,0,4	off
+window	139	4	:frp-new	1	:*	6363,270x56,0,0,14	off
+window	分销	1	:dev	1	:*	b2e2,271x32,0,0,5	off
+window	分销	2	:pre1	0	:-	b6c4,133x52,0,0,7	off
+window	分销	3	:pre2	0	:	57a4,271x31,0,0,15	off
+window	分销	4	:test	0	:	59a5,271x32,0,0,16	off
+window	营销	1	:dev1	0	:-Z	0c3e,271x31,0,0{136x31,0,0,8,134x31,137,0,13}	off
+window	营销	2	:dev2	1	:*	aee6,271x31,0,0,9	off
+window	营销	3	:test1	0	:	599f,271x32,0,0,10	off
+window	营销	4	:test2	0	:	59a0,271x32,0,0,11	off
+state	分销	营销

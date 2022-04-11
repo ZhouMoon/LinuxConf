@@ -1,0 +1,24 @@
+pane	139	1	0	:	1	:/root	1	less	:less .ssh/config
+pane	139	2	0	:	1	:/root/frp/frp_0.38.0_linux_amd64	1	./frps	:./frps -c frps.ini
+pane	139	3	0	:-	1	:/root/frp/frp_0.38.0_linux_amd64	1	./frps	:./frps -c frps_8001.ini
+pane	139	4	1	:*	1	:/root/frp/frp_0.38.0_linux_amd64	1	bash	:
+pane	分销	1	1	:*	1	:/root	1	bash	:
+pane	分销	2	0	:	1	:/root	1	bash	:
+pane	分销	3	0	:-	1	:/root	1	bash	:
+pane	营销	1	0	:	1	:/root	0	ssh	:ssh yx-dev1
+pane	营销	1	0	:	2	:/root	1	ssh	:ssh yx-dev1
+pane	营销	2	0	:	1	:/root	1	ssh	:ssh yx-dev2
+pane	营销	3	1	:*	1	:/root	1	ssh	:ssh yx-test1
+pane	营销	4	0	:-	1	:/root	1	ssh	:ssh yx-test2
+window	139	1	:root	0	:	cc7d,127x38,0,0,0	off
+window	139	2	:frp-home	0	:	b27f,104x51,0,0,2	off
+window	139	3	:frp-tkpda15p	0	:-	cc81,127x38,0,0,4	off
+window	139	4	:frp-new	1	:*	6673,127x38,0,0,14	off
+window	分销	1	:dev	1	:*	cc82,127x38,0,0,5	off
+window	分销	2	:test	0	:	cb83,121x29,0,0,6	off
+window	分销	3	:pre	0	:-	cb84,121x29,0,0,7	off
+window	营销	1	:dev1	0	:	cb5f,126x38,0,0{63x38,0,0,8,62x38,64,0,13}	off
+window	营销	2	:dev2	0	:	cc06,126x38,0,0,9	off
+window	营销	3	:test1	1	:*	666f,127x38,0,0,10	off
+window	营销	4	:test2	0	:-	6630,126x38,0,0,11	off
+state	139	分销
