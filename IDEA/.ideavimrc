@@ -82,7 +82,7 @@ vnoremap Y "+y
 " 个人习惯
 "=============================================================
 "选中引号内
-nnoremap <Leader>v vi""
+nnoremap <Leader>v vi"
 " 选择模式选到行首
 vnoremap H ^
 " 选择模式选到行尾
@@ -93,8 +93,6 @@ nnoremap <silent> <Down> gT
 "下一个Tab
 "nnoremap L gt
 nnoremap <silent> <Up> gt
-"  tab , 切换 窗口
-nnoremap <Tab> <c-w>w
 "=============================================================
 " IDEA预定义方法自定义快捷键
 " 查看预定义方法命令 `:actionlist` 请取需要的命令设为组合键
@@ -143,7 +141,6 @@ nnoremap <Left> :action PreviousWindow<CR>
 "下一个Window
 "nnoremap nm :action NextWindow<CR>
 nnoremap <Right> :action NextWindow<CR>
-
 "=============================================================
 " Plus settings
 "=============================================================
