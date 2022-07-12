@@ -77,6 +77,9 @@ nnoremap <Leader>y "*y
 nnoremap <Leader>p "*p
 noremap P "0p
 vnoremap Y "+y
+"退格代替<S>%
+"nnoremap backspace %
+nnoremap <BS> %
 
 "=============================================================
 " 个人习惯
@@ -130,9 +133,11 @@ nnoremap <Leader><Leader><Leader>l :action ToggleFullScreen <CR>
 " 新建...
 nnoremap <Leader><Leader>n :action NewElement<CR>
 " 选择模式扩大选择范围
-vnoremap <Leader>w :action EditorSelectWord<CR>
+vnoremap v :action EditorSelectWord<CR>
+" 选择模式缩小选择范围
+vnoremap V :action EditorUnSelectWord<CR>
 "打开最近项目
-nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+nnoremap <Leader><Leader>o :<C-u>action RecentProjectListGroup<CR>
 "Git 提交记录
 nnoremap ta :action Annotate<CR>
 "上一个Window
