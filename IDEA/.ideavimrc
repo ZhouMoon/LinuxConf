@@ -96,6 +96,10 @@ nnoremap <silent> <Down> gT
 "下一个Tab
 "nnoremap L gt
 nnoremap <silent> <Up> gt
+"行首
+nnoremap H ^
+"行尾
+nnoremap L $
 "=============================================================
 " IDEA预定义方法自定义快捷键
 " 查看预定义方法命令 `:actionlist` 请取需要的命令设为组合键
@@ -142,10 +146,10 @@ nnoremap <Leader><Leader>o :<C-u>action RecentProjectListGroup<CR>
 nnoremap ta :action Annotate<CR>
 "上一个Window
 "nnoremap mn :action PreviousWindow<CR>
-nnoremap <Left> :action PreviousWindow<CR>
+"nnoremap <Left> :action PreviousWindow<CR>
 "下一个Window
 "nnoremap nm :action NextWindow<CR>
-nnoremap <Right> :action NextWindow<CR>
+"nnoremap <Right> :action NextWindow<CR>
 "=============================================================
 " Plus settings
 "=============================================================
