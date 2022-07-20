@@ -144,10 +144,6 @@ vnoremap V :action EditorUnSelectWord<CR>
 nnoremap <Leader><Leader>o :<C-u>action RecentProjectListGroup<CR>
 " Git 提交记录
 nnoremap ta :action Annotate<CR>
-" 显示@Value值
-nnoremap ts :action CollapseRegion<CR>
-" 隐藏@Value值
-nnoremap th :action ExpandRegion<CR>
 " 上一个Window
 "nnoremap mn :action PreviousWindow<CR>
 "nnoremap <Left> :action PreviousWindow<CR>
